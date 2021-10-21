@@ -433,6 +433,12 @@ class CarouselLayoutManager constructor(
         startScroll(mOffsetAll, finalOffset)
     }
 
+    public fun smoothScroll(position: Int){
+        if (mInfinite) return
+        val finalOffset = calculatePositionOffset(position)
+        startScroll(mOffsetAll, finalOffset)
+    }
+
     /**
      * Provides the center position of current display area, this method used in the [CarouselRecyclerview.getChildDrawingOrder]
      * where we make child order
